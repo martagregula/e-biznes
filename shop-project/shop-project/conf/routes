@@ -1,0 +1,68 @@
+# user
+POST        /user                   controllers.UserController.addUser()
+GET         /users                  controllers.UserController.getUsers
+GET         /user/:id               controllers.UserController.getUser(id: Long)
+DELETE      /user/:id               controllers.UserController.deleteUser(id: Long)
+POST        /user/:id               controllers.UserController.updateUser(id: Long)
+
+# products
+POST        /product                controllers.ProductController.addProduct()
+GET         /products               controllers.ProductController.getProducts
+GET         /product/:id            controllers.ProductController.getProduct(id: Long)
+DELETE      /product/:id            controllers.ProductController.deleteProduct(id: Long)
+POST        /product/:id            controllers.ProductController.updateProduct(id: Long)
+
+# category
+POST        /category               controllers.CategoryController.addCategory()
+GET         /categories             controllers.CategoryController.getCategories
+GET         /category/:id           controllers.CategoryController.getCategory(id: Long)
+DELETE      /category/:id           controllers.CategoryController.deleteCategory(id: Long)
+POST        /category/:id           controllers.CategoryController.updateCategory(id: Long)
+
+# cart
+POST        /cart                   controllers.CartController.addCart
+GET         /cart/:id               controllers.CartController.getCart(id: Long)
+DELETE      /cart/:id               controllers.CartController.deleteCart(id: Long)
+POST        /cart/:id               controllers.CartController.updateCart(id: Long)
+
+# order
+POST        /order                  controllers.OrderController.addOrder
+GET         /orders                 controllers.OrderController.getOrders
+GET         /order/:id              controllers.OrderController.getOrder(id: Long)
+DELETE      /order/:id              controllers.OrderController.deleteOrder(id: Long)
+POST        /order/:id              controllers.OrderController.updateOrder(id: Long)
+
+# cartElement
+POST        /cartElement            controllers.CartElementController.addCartElement
+GET         /cartElements           controllers.CartElementController.getCartElement
+GET         /cartElement/:id        controllers.CartElementController.getCartElement(id: Long)
+DELETE      /cartElement/:id        controllers.CartElementController.deleteCartElement(id: Long)
+POST        /cartElement/:id        controllers.CartElementController.updateCartElement(id: Long)
+
+# productRating
+POST        /productRating          controllers.ProductRatingController.addProductRating
+GET         /productRatings         controllers.ProductRatingController.getProductRatings
+GET         /productRating/:id      controllers.ProductRatingController.getProductRating(id: Long)
+DELETE      /productRating/:id      controllers.ProductRatingController.deleteProductRating(id: Long)
+POST        /productRating/:id      controllers.ProductRatingController.updateProductRating(id: Long)
+
+# payment
+POST        /userPayment            controllers.UserPaymentController.addUserPayment
+GET         /userPayments           controllers.UserPaymentController.getUserPayments
+GET         /userPayment/:id        controllers.UserPaymentController.getUserPayment(id: Long)
+DELETE      /userPayment/:id        controllers.UserPaymentController.deleteUserPayment(id: Long)
+POST        /userPayment/:id        controllers.UserPaymentController.updateUserPayment(id: Long)
+
+# currency
+POST        /Currency         controllers.CurrencyController.addCurrency
+GET         /Currencies       controllers.CurrencyController.getCurrencies
+GET         /Currency/:id     controllers.CurrencyController.getCurrency(id: Long)
+DELETE      /Currency/:id     controllers.CurrencyController.deleteCurrency(id: Long)
+POST        /Currency/:id     controllers.CurrencyController.updateCurrency(id: Long)
+
+# discount
+POST        /discount            controllers.DiscountController.addDiscount
+GET         /discounts           controllers.DiscountController.getDiscounts
+GET         /discount/:id        controllers.DiscountController.getDiscount(id: Long)
+DELETE      /discount/:id        controllers.DiscountController.deleteDiscount(id: Long)
+POST        /discount/:id        controllers.DiscountController.updateDiscount(id: Long)
