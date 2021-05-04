@@ -6,29 +6,29 @@ import javax.inject._
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class CartItemController @Inject()(cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
+class CartElementController @Inject()(cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
 
-  def addCartItem(): Action[AnyContent] = Action {
+  def addCartElement(): Action[AnyContent] = Action {
     NoContent
   }
 
-  def getCartItems: Action[AnyContent] = Action.async { implicit request =>
+  def getCartElement: Action[AnyContent] = Action.async { implicit request =>
     Future {
       Ok("")
     }
   }
 
-  def getCartItem(id: Long): Action[AnyContent] = Action.async { implicit request =>
+  def getCartElement(id: Long): Action[AnyContent] = Action.async { implicit request =>
     Future {
       Ok("")
     }
   }
 
-  def deleteCartItem(id: Long): Action[AnyContent] = Action {
+  def deleteCartElement(id: Long): Action[AnyContent] = Action {
     NoContent
   }
 
-  def updateCartItem(id: Long): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+  def updateCartElement(id: Long): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
     Future {
       Ok("")
     }
