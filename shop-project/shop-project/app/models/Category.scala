@@ -1,6 +1,6 @@
 package models
-import play.api.libs.json.Json
 
+import play.api.libs.json.Json
 
 case class Category(id: Long, name: String, description: String)
 

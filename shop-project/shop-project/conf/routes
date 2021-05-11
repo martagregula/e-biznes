@@ -1,68 +1,155 @@
-# user
-POST        /user                   controllers.UserController.addUser()
-GET         /users                  controllers.UserController.getUsers
+# home
+GET     /                           controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# products routes (ok)
+GET         /addproduct          controllers.ProductController.addProduct
+POST        /addproducthandle   controllers.ProductController.addProductHandle
+GET         /products           controllers.ProductController.getProducts
+GET         /product/:id        controllers.ProductController.getProduct(id: Long)
+GET         /product/del/:id    controllers.ProductController.deleteProduct(id: Long)
+GET         /product/up/:id        controllers.ProductController.updateProduct(id: Long)
+POST        /updateproducthandle        controllers.ProductController.updateProductHandle
+
+GET         /api/products           controllers.ProductController.getProductsJson
+GET         /api/product/:id           controllers.ProductController.getProductJson(id: Long)
+POST        /api/product            controllers.ProductController.addProductJson
+DELETE       /api/product/:id          controllers.ProductController.deleteProductJson(id: Long)
+POST         /api/product_update       controllers.ProductController.updateProductJson
+
+# category routes (ok)
+GET         /addcategory        controllers.CategoryController.addCategory
+POST        /addcategoryhandle  controllers.CategoryController.addCategoryHandle
+GET         /categories         controllers.CategoryController.getCategories
+GET         /category/:id       controllers.CategoryController.getCategory(id: Long)
+GET         /category/del/:id   controllers.CategoryController.deleteCategory(id: Long)
+GET         /category/up/:id       controllers.CategoryController.updateCategory(id: Long)
+POST        /updatecategoryhandle   controllers.CategoryController.updateCategoryHandle
+
+GET         /api/categories           controllers.CategoryController.getCategoriesJson
+GET         /api/category/:id          controllers.CategoryController.getCategoryJson(id: Long)
+POST        /api/category           controllers.CategoryController.addCategoryJson
+DELETE       /api/category/:id          controllers.CategoryController.deleteCategoryJson(id: Long)
+POST         /api/category_update        controllers.CategoryController.updateCategoryJson
+
+# user routes (ok)
+GET         /adduser                controllers.UserController.addUser
+POST        /adduserhandle          controllers.UserController.addUserHandle
+GET         /users                 controllers.UserController.getUsers
 GET         /user/:id               controllers.UserController.getUser(id: Long)
-DELETE      /user/:id               controllers.UserController.deleteUser(id: Long)
-POST        /user/:id               controllers.UserController.updateUser(id: Long)
+GET         /user/del/:id          controllers.UserController.deleteUser(id: Long)
+GET         /user/up/:id           controllers.UserController.updateUser(id: Long)
+POST        /updateuserhandle      controllers.UserController.updateUserHandle
 
-# products
-POST        /product                controllers.ProductController.addProduct()
-GET         /products               controllers.ProductController.getProducts
-GET         /product/:id            controllers.ProductController.getProduct(id: Long)
-DELETE      /product/:id            controllers.ProductController.deleteProduct(id: Long)
-POST        /product/:id            controllers.ProductController.updateProduct(id: Long)
+GET         /api/users          controllers.UserController.getUsersJson
+GET         /api/user/:id          controllers.UserController.getUserJson(id: Long)
+POST        /api/user           controllers.UserController.addUserJson
+DELETE       /api/user/:id          controllers.UserController.deleteUserJson(id: Long)
+POST         /api/user_update        controllers.UserController.updateUserJson
 
-# category
-POST        /category               controllers.CategoryController.addCategory()
-GET         /categories             controllers.CategoryController.getCategories
-GET         /category/:id           controllers.CategoryController.getCategory(id: Long)
-DELETE      /category/:id           controllers.CategoryController.deleteCategory(id: Long)
-POST        /category/:id           controllers.CategoryController.updateCategory(id: Long)
+# userPayment data (ok)
+GET         /adduserPayment        controllers.UserPaymentController.addUserPayment
+POST        /adduserPaymentHandle       controllers.UserPaymentController.addUserPaymentHandle
+GET         /userPayments       controllers.UserPaymentController.getUserPayments
+GET         /userPayment/:id    controllers.UserPaymentController.getUserPayment(id: Long)
+GET         /userPayment/del/:id    controllers.UserPaymentController.deleteUserPayment(id: Long)
+GET         /userPayment/up/:id     controllers.UserPaymentController.updateUserPayment(id: Long)
+POST        /updateuserPaymentHandle    controllers.UserPaymentController.updateUserPaymentHandle
 
-# cart
-POST        /cart                   controllers.CartController.addCart
-GET         /cart/:id               controllers.CartController.getCart(id: Long)
-DELETE      /cart/:id               controllers.CartController.deleteCart(id: Long)
-POST        /cart/:id               controllers.CartController.updateCart(id: Long)
+GET         /api/usersPayments          controllers.UserPaymentController.getUserPaymentsJson
+GET         /api/usersPayment:id          controllers.UserPaymentController.getUserPaymentJson(id: Long)
+POST        /api/usersPayment          controllers.UserPaymentController.addUserPaymentJson
+DELETE       /api/usersPayment/:id          controllers.UserPaymentController.deleteUserPaymentJson(id: Long)
+POST         /api/usersPayment_update       controllers.UserPaymentController.updateUserPaymentJson
 
-# order
-POST        /order                  controllers.OrderController.addOrder
-GET         /orders                 controllers.OrderController.getOrders
-GET         /order/:id              controllers.OrderController.getOrder(id: Long)
-DELETE      /order/:id              controllers.OrderController.deleteOrder(id: Long)
-POST        /order/:id              controllers.OrderController.updateOrder(id: Long)
+# userAddress (ok)
+GET         /adduserAddress         controllers.UserAddressController.addUserAddress
+POST        /adduserAddressHandle         controllers.UserAddressController.addUserAddressHandle
+GET         /userAddresses       controllers.UserAddressController.getUserAddresses
+GET         /userAddress/:id     controllers.UserAddressController.getUserAddress(id: Long)
+GET         /userAddress/del/:id     controllers.UserAddressController.deleteUserAddress(id: Long)
+GET         /userAddress/up/:id     controllers.UserAddressController.updateUserAddress(id: Long)
+POST        /updateuserAddress     controllers.UserAddressController.updateUserAddressHandle
 
-# cartElement
-POST        /cartElement            controllers.CartElementController.addCartElement
-GET         /cartElements           controllers.CartElementController.getCartElement
-GET         /cartElement/:id        controllers.CartElementController.getCartElement(id: Long)
-DELETE      /cartElement/:id        controllers.CartElementController.deleteCartElement(id: Long)
-POST        /cartElement/:id        controllers.CartElementController.updateCartElement(id: Long)
+GET         /api/usersAddresses          controllers.UserAddressController.getUsersAddressesJson
+GET         /api/userAddresses/:id          controllers.UserAddressController.getUserAddressesJson(id: Long)
+POST        /api/userAddres          controllers.UserAddressController.adduserAddresJson
+DELETE       /api/userAddres/:id          controllers.UserAddressController.deleteuserAddresJson(id: Long)
+POST         /api/userAddres_update        controllers.UserAddressController.updateuserAddrestJson
 
-# productRating
-POST        /productRating          controllers.ProductRatingController.addProductRating
-GET         /productRatings         controllers.ProductRatingController.getProductRatings
-GET         /productRating/:id      controllers.ProductRatingController.getProductRating(id: Long)
-DELETE      /productRating/:id      controllers.ProductRatingController.deleteProductRating(id: Long)
-POST        /productRating/:id      controllers.ProductRatingController.updateProductRating(id: Long)
-
-# payment
-POST        /userPayment            controllers.UserPaymentController.addUserPayment
-GET         /userPayments           controllers.UserPaymentController.getUserPayments
-GET         /userPayment/:id        controllers.UserPaymentController.getUserPayment(id: Long)
-DELETE      /userPayment/:id        controllers.UserPaymentController.deleteUserPayment(id: Long)
-POST        /userPayment/:id        controllers.UserPaymentController.updateUserPayment(id: Long)
-
-# currency
-POST        /Currency         controllers.CurrencyController.addCurrency
-GET         /Currencies       controllers.CurrencyController.getCurrencies
-GET         /Currency/:id     controllers.CurrencyController.getCurrency(id: Long)
-DELETE      /Currency/:id     controllers.CurrencyController.deleteCurrency(id: Long)
-POST        /Currency/:id     controllers.CurrencyController.updateCurrency(id: Long)
-
-# discount
-POST        /discount            controllers.DiscountController.addDiscount
+# discount (ok)
+GET         /adddiscount            controllers.DiscountController.addDiscount
+POST        /adddiscountHandle            controllers.DiscountController.addDiscountHandle
 GET         /discounts           controllers.DiscountController.getDiscounts
 GET         /discount/:id        controllers.DiscountController.getDiscount(id: Long)
-DELETE      /discount/:id        controllers.DiscountController.deleteDiscount(id: Long)
-POST        /discount/:id        controllers.DiscountController.updateDiscount(id: Long)
+GET         /discount/del/:id        controllers.DiscountController.deleteDiscount(id: Long)
+GET         /discount/up/:id        controllers.DiscountController.updateDiscount(id: Long)
+POST        /updatediscount       controllers.DiscountController.updateDiscountHandle
+
+GET         /api/discounts          controllers.DiscountController.getDiscountsJson
+GET         /api/discount/:id          controllers.DiscountController.getDiscountJson(id: Long)
+POST        /api/discount         controllers.DiscountController.addDiscountJson
+DELETE       /api/discount/:id          controllers.DiscountController.deleteDiscountJson(id: Long)
+POST         /api/discount_update        controllers.DiscountController.updateDiscountJson
+
+# cart routes (ok)
+GET         /addcart               controllers.CartController.addCart
+POST         /addcartHandle               controllers.CartController.addCartHandle
+GET         /carts           controllers.CartController.getCarts
+GET         /cart/:id           controllers.CartController.getCart(id: Long)
+GET        /cart/del/:id           controllers.CartController.deleteCart(id: Long)
+GET        /cart/up/:id           controllers.CartController.updateCart(id: Long)
+POST       /updatecart           controllers.CartController.updateCartHandle()
+
+GET         /api/carts          controllers.CartController.getCartsJson
+GET         /api/carts/:id         controllers.CartController.getCartJson(id: Long)
+POST        /api/cart        controllers.CartController.addCartJson
+DELETE       /api/cart/:id          controllers.CartController.deleteCartJson(id: Long)
+POST         /api/cart_update        controllers.CartController.updateCartJson
+
+# order routes
+GET        /addorder              controllers.OrderController.addOrder
+POST        /orderHandle              controllers.OrderController.addOrderHandle
+GET         /orders             controllers.OrderController.getOrders
+GET         /order/:id          controllers.OrderController.getOrder(id: Long)
+GET      /order/del/:id          controllers.OrderController.deleteOrder(id: Long)
+GET        /order/up/:id          controllers.OrderController.updateOrder(id: Long)
+POST        /updateorder         controllers.OrderController.updateOrderHandle
+
+GET         /api/orders          controllers.OrderController.getOrdersJson
+GET         /api/order/:id          controllers.OrderController.getOrderJson(id: Long)
+POST        /api/order        controllers.OrderController.addOrderJson
+DELETE       /api/order/:id          controllers.OrderController.deleteOrderJson(id: Long)
+POST         /api/order_update        controllers.OrderController.updateOrderJson
+
+# cartItem routes
+GET         /addcartItem           controllers.CartItemController.addCartItem
+POST        /addcartItemHandle     controllers.CartItemController.addCartItemHandle
+GET         /cartItems          controllers.CartItemController.getCartItems
+GET         /cartItem/:id       controllers.CartItemController.getCartItem(id: Long)
+GET         /cartItem/del/:id       controllers.CartItemController.deleteCartItem(id: Long)
+GET         /cartItem/up/:id       controllers.CartItemController.updateCartItem(id: Long)
+POST        /updatecartItem      controllers.CartItemController.updateCartItemHandle
+
+GET         /api/cartsItems          controllers.CartItemController.getCartsItemsJson
+GET         /api/cartItems/:id          controllers.CartItemController.getCarItemsJson(id: Long)
+POST        /api/cartItem        controllers.CartItemController.addCarItemJson
+DELETE       /api/cartItem/:id          controllers.CartItemController.deleteCarItemJson(id: Long)
+POST         /api/cartItem_update        controllers.CartItemController.updateCarItemJson
+
+## productReview routes
+GET        /productReview      controllers.ProductReviewController.addProductReview
+POST        /productReviewHandle      controllers.ProductReviewController.addProductReviewHandle
+GET         /productReviews     controllers.ProductReviewController.getProductReviews
+GET         /productReview/:id  controllers.ProductReviewController.getProductReview(id: Long)
+GET      /productReview/del/:id  controllers.ProductReviewController.deleteProductReview(id: Long)
+GET        /productReview/up/:id  controllers.ProductReviewController.updateProductReview(id: Long)
+POST        /updateproductReview  controllers.ProductReviewController.updateProductReviewHandle
+
+GET         /api/productsReviews          controllers.ProductReviewController.getProductdReviewsJson
+GET         /api/productReviews/:id          controllers.ProductReviewController.getProductReviewsJson(id: Long)
+POST        /api/productReview        controllers.ProductReviewController.addProductReviewJson
+DELETE       /api/productReview/:id          controllers.ProductReviewController.deleteProductReviewJson(id: Long)
+POST         /api/productReview_update        controllers.ProductReviewController.updateProductReviewJson
