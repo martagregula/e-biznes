@@ -24,6 +24,7 @@ jobs:
         java-version: '11'
 
     - name: Build with Sbt
+      working-directory: shop-project/shop-project
       run: sbt run
 
     - name: Run Azure webapp deploy action using publish profile credentials
