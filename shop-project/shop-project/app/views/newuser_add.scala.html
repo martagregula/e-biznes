@@ -1,0 +1,16 @@
+@(newUser: Form[CreateUserForm])(implicit request: MessagesRequestHeader, flash: Flash)
+@import helper._
+
+@flash.get("success").getOrElse("")
+@form(routes.UserController.addUserHandle()) {
+@helper.CSRF.formField
+@inputText(newUser("nick"))
+@inputText(newUser("firstName"))
+@inputText(newUser("lastName"))
+@inputText(newUser("email"))
+@inputPassword(newUser("password"))
+
+<div class="buttons">
+    <input type="submit" value="Submit"/>
+</div>
+}

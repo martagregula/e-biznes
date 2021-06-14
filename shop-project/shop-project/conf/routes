@@ -153,3 +153,9 @@ GET         /api/productReviews/:id          controllers.ProductReviewController
 POST        /api/productReview        controllers.ProductReviewController.addProductReviewJson
 DELETE       /api/productReview/:id          controllers.ProductReviewController.deleteProductReviewJson(id: Long)
 POST         /api/productReview_update        controllers.ProductReviewController.updateProductReviewJson
+
+# Authentication
+# POST        /signUp                                   controllers.SignUpController.signUp
+# POST        /signIn                                   controllers.SignInController.signIn
+# POST        /signOut                                  controllers.SignInController.signOut
+GET         /authenticate/:provider                   controllers.SocialAuthController.authenticate(provider: String)
