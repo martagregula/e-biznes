@@ -132,22 +132,7 @@ class ProductController @Inject()(productsRepo: ProductRepository, categoryRepo:
 
   //json
   def getProductsJson = Action.async {
-    //test
     val produkty = productsRepo.list()
-//    val categories = categoryRepo.list()
-
-//    val crossJoin = for {
-//      (c, s) <- produkty join categories
-//    } yield (c.categoryId, s.id)
-
-//    produkty.leftJoin(categories).on { case (prod, cat) =>
-//      prod.categoryId === cat.id
-//    }.values.toList
-
-//    produkty.flatMap(p =>
-//      categories.filter(a => p.categoryId === a.id)
-//        .map(a => (p.name, a.city))
-//    ).result
 
     produkty.map { seq =>
       Ok(Json.toJson(seq))

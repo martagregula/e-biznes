@@ -157,14 +157,11 @@ class UserPaymentController @Inject()(userPaymentRepo: UserPaymentRepository, us
           Ok(Json.toJson(res))
         }
     }.getOrElse(Future.successful(BadRequest("incorrect data")))
-
   }
-
 
   def deleteUserPaymentJson(id: Long): Action[AnyContent] = Action.async {
     userPaymentRepo.deleteJson(id).map { res =>
       Ok(Json.toJson(res))
     }
   }
-
 }
