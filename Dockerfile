@@ -52,10 +52,11 @@ WORKDIR /home/mgregula/
 
 RUN cd /home/mgregula/
 RUN git clone https://github.com/Metanefrydia/e-biznes.git && cd e-biznes && git fetch
-RUN mv -v ~/e-biznes/* ~/
+RUN mv -v ~/e-biznes/shop-project/shop-project/* ~/
 
+RUN pwd
 RUN sbt playUpdateSecret
 RUN sbt stage
-CMD cd target/universal/stage/bin && chmod +x shop_project && ./shop-project -Dhttp.port=9000
+CMD cd target/universal/stage/bin && chmod +x shop_project && ./shop_project -Dhttp.port=9000
 
 EXPOSE 9000
